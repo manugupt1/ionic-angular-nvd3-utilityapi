@@ -1,0 +1,44 @@
+/* Empty. Add your own CSS if you like */
+
+.content{
+    background-color:#333D4A;
+}
+
+.item-content{
+    background:#333D4A;
+    color:whitesmoke;
+}
+
+.item .item-content{
+    background-color:transparent !important
+}
+
+.cell-features{
+    display:table;
+    vertical-align:middle;
+    text-align:center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:medium;
+    font-weight:600;
+    padding:10px;
+    color:whitesmoke;
+}
+.n-header-bgcolor{
+    background-color:#212C36;
+    height:200px;
+}
+.n-coal-bgimage{
+    background-image:url('../img/n-coal.jpg')
+}
+
+.n-electricity-bgimage{
+    background-image:url('../img/n-neighborhood.jpg')
+}
+
+.n-water-bgimage{
+    background-image:url('../img/n-water.jpg')
+}
+
+ion-item {
+  background-color: transparent !important;
+}

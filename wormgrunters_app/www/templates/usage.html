@@ -1,0 +1,42 @@
+<ion-view view-title="My usage">
+  <ion-content scroll="false" class="content">
+      <div class="row">
+          <div class="col">
+              <nvd3 options="vm.options" data="vm.data">
+
+              </nvd3>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col">
+              <div class="row cell-features">
+                  Peak time
+              </div>
+              <div class="row cell-features">
+                  {{ me_peak_time }} hours
+              </div>
+          </div>
+          <div class="col">
+
+              <div class="row cell-features">
+                  Peak usage
+              </div>
+              <div class="row cell-features">
+                  {{ me_peak }} KwH
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col cell-features">
+              {{percent}}
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col cell-features">
+              {{ earnings_report }}
+          </div>
+      </div>
+  </ion-content>
+</ion-view>
