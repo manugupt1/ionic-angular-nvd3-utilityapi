@@ -54,3 +54,14 @@
 ion-item {
   background-color: transparent !important;
 }
+
+.custom-icon-dead {
+  font-size: 64px;
+  color : red;
+}
+
+.custom-icon-alive {
+  font-size: 64px;
+  color : forestgreen;
+}
+

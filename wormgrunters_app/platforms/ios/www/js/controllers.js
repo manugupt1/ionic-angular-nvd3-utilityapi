@@ -45,21 +45,21 @@ angular.module('starter.controllers', [])
 .controller('GoallistsCtrl', function ($scope) {
     $scope.goals = [
       { title: 'Neighbour takedown', id: 1 },
-      { title: 'Replacing CFLs', id: 2 },
-      { title: 'Using Energy star equipment', id: 3 },
-      { title: 'Cold wash water', id: 4 },
-      { title: 'Turning down my refrigerator temp.', id: 5 }
+      { title: 'Using CFL', id: 2 },
+      //{ title: 'Using Energy star equipment', id: 3 },
+      //{ title: 'Cold wash water', id: 4 },
+      //{ title: 'Replacing CFLs', id: 5 }
     ];
 })
 
 .controller('GoallistCtrl', function ($scope, $stateParams) {
     // Ideally it should use the API, getGoalStatus(user) or getGoalStatus(user,goalId) The former has less mining, and is a one off operation if the states are maintained properly
     goalRes = [
-        { userID: 1, status: 0.1, goalId: 1 },
-        { userID: 1, status: 0.6, goalId: 2 },
-        { userID: 1, status: 0.9, goalId: 3 },
-        { userID: 1, status: 0.3, goalId: 4 },
-        { userID: 1, status: 0.8, goalId: 5 }
+        { userID: 1, status: 0.1, goalId: 1, tip : "As per Energy.gov, simple lifestyle changes like air drying your dishes, clothes, buying energy star equipments etc. can reduce your bill by 10%" },
+        { userID: 1, status: 0.6, goalId: 2, tip: "Lighting makes up about 10% of home electricity costs. You can save up to 80% of that energy by simply replacing your traditional incandescents with compact fluorescent lamps (CFLs) and light emitting diodes (LEDs). They will also last you for years after the summer is gone, saving money on replacements." },
+        //{ userID: 1, status: 0.9, goalId: 3 },
+        //{ userID: 1, status: 0.3, goalId: 4 },
+        //{ userID: 1, status: 0.8, goalId: 5 }
     ];
 
     $scope.goalId = $stateParams.goalId;
@@ -68,7 +68,15 @@ angular.module('starter.controllers', [])
     for (i = 0; i < goalRes.length; ++i) {
         if ($scope.goalId == goalRes[i].goalId) {
             var res = goalRes[i].status * 100;
-            $scope.goalRes = "You are " + res.toString() + "% to your goal";
+            if (res < 30) {
+                $scope.goalRes = "You are " + (100 - res.toString()) + "% behind your goal.";
+                $scope.goalTip = goalRes[i].tip;
+                $scope.imgURL = "../img/crying.png";
+            } else {
+                $scope.goalRes = "You have achieved " + res.toString() + "% closer to your goal.";
+                $scope.goalTip = goalRes[i].tip;
+                $scope.imgURL = "../img/summer.png";
+            }
             break;
         }
     }
@@ -138,7 +146,6 @@ angular.module('starter.controllers', [])
 
             } else {
                 $scope.percent = 100 - $scope.percent;
-                $rootScope.loss = 0;
                 window.localStorage.setItem("profit", (them_total - me_total).toFixed(2));
                 $scope.percent = "Yay!! You are saving " + $scope.percent.toFixed(2) + "% electricity as compared to your your neighbors"
                 $scope.earnings_report = "Woo! You are saving " + ($scope.them_mean - $scope.me_mean).toFixed(2) + "$ more than your neighbors"
