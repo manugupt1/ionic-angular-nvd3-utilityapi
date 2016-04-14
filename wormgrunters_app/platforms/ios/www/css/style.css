@@ -15,7 +15,7 @@
 
 .cell-features{
     display:table;
-    vertical-align:middle;
+    vertical-align:central !important;
     text-align:center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size:medium;
@@ -23,19 +23,31 @@
     padding:10px;
     color:whitesmoke;
 }
-.n-header-bgcolor{
-    background-color:#212C36;
-    height:200px;
-}
-.n-coal-bgimage{
-    background-image:url('../img/n-coal.jpg')
+
+.usage-cell-features{
+    display:table;
+    vertical-align:central !important;
+    text-align:center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:large;
+    font-weight:600;
+    padding:10px;
+    color:whitesmoke;
 }
 
+.n-coal-bgimage{
+     height:170px;
+     background-image: url('../img/n-coal.jpg') !Important;
+}
+
+
 .n-electricity-bgimage{
+    height:170px;
     background-image:url('../img/n-neighborhood.jpg')
 }
 
 .n-water-bgimage{
+    height:170px;
     background-image:url('../img/n-water.jpg')
 }
 

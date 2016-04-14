@@ -64,10 +64,10 @@ angular.module('starter.controllers', [])
 
     $scope.goalId = $stateParams.goalId;
 
+
     for (i = 0; i < goalRes.length; ++i) {
         if ($scope.goalId == goalRes[i].goalId) {
             var res = goalRes[i].status * 100;
-            console.log(res);
             $scope.goalRes = "You are " + res.toString() + "% to your goal";
             break;
         }
