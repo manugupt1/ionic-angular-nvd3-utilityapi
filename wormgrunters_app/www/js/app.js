@@ -36,7 +36,8 @@ angular.module('starter', ['ionic', 'starter.controllers','nvd3'])
       url: '/neighborhood',
     views: {
       'menuContent': {
-          templateUrl: 'templates/neighborhood.html'
+          templateUrl: 'templates/neighborhood.html',
+          controller:'neighborhoodCtrl'
       }
     }
   })

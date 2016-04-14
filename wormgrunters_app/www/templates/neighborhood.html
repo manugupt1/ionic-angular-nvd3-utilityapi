@@ -1,16 +1,18 @@
-<ion-view view-title="Neighborhood impact">
+<ion-view view-title="My impact">
   <ion-content scroll="false" class="content">
           <div class="row ">
-              <div class="col col-center n-coal-bgimage usage-cell-features">XX tonnes of coal</div>
+              <div class="col col-center n-coal-bgimage usage-cell-features">
+                {{ individual }}
+              </div>
           </div>
           <div class="row ">
               <div class="col col-center n-electricity-bgimage usage-cell-features">
-                  Electricity for ___ days for your neighborhood
+                  {{ neighbor }}
               </div>
           </div>
           <div class="row ">
               <div class="col col-center n-water-bgimage usage-cell-features">
-                  Water for ___ days for your neighborhood
+                  {{ global }}
               </div>
           </div>
   </ion-content>
